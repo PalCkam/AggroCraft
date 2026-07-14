@@ -1,7 +1,6 @@
 package com.palckam.aggrocraft.entity;
 
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
-import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.registry.Registries;
@@ -14,7 +13,7 @@ public class ModEntities
 			Registries.ENTITY_TYPE,
 			Identifier.of("aggrocraft", "sentinel"),
 			EntityType.Builder.create(SentinelEntity::new, SpawnGroup.CREATURE)
-					.dimensions(EntityDimensions.fixed(0.6f, 1.95f))
+					.dimensions(0.6f, 1.95f)
 					.build()
 	);
 	
