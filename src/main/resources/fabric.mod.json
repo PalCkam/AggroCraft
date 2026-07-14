@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "aggrocraft",
+  "version": "${version}",
+  "name": "AggroCraft",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/aggrocraft/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "com.palckam.aggrocraft.client.AggroCraftDataGenerator"
+    ],
+    "client": [
+      "com.palckam.aggrocraft.client.AggroCraftClient"
+    ],
+    "main": [
+      "com.palckam.aggrocraft.AggroCraft"
+    ]
+  },
+  "mixins": [
+    "aggrocraft.mixins.json",
+    {
+      "config": "aggrocraft.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
