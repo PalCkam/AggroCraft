@@ -1,5 +1,9 @@
 package com.palckam.aggrocraft.entity;
 
+
+import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
+import net.minecraft.world.biome.BiomeKeys;
+import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
@@ -21,5 +25,8 @@ public class ModEntities
 	public static void registerModEntities()
 	{
 		FabricDefaultAttributeRegistry.register(SENTINEL, SentinelEntity.createSentinelAttributes());
+		
+		BiomeModifications.addSpawn(BiomeSelectors.includeByKey(BiomeKeys.PLAINS),
+				                    SpawnGroup.CREATURE, SENTINEL, 30, 3, 3      );
 	}
 }
